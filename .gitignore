@@ -1,3 +1,9 @@
+# Bot token
+token.json
+
+# Leaderboard data
+bumpData/*
+
 # Logs
 logs
 *.log
