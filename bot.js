@@ -3,7 +3,17 @@ const token = require('./token.json');
 
 const Discord = require('discord.js');
 const request = require('request');
-const client = new Discord.Client();
+
+const client = new Discord.Client({
+    intents: [
+        Discord.Intents.FLAGS.GUILD_MESSAGES,
+        Discord.Intents.FLAGS.GUILDS,
+        Discord.Intents.FLAGS.DIRECT_MESSAGES,
+        Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+        Discord.Intents.FLAGS.GUILD_MEMBERS
+    ]
+});
+
 const colors = require("colors");
 const fs = require("fs");
 client.commands = new Discord.Collection();
