@@ -75,7 +75,7 @@ client.on(`messageCreate`, message => {
 
 		let stringArgs = args.join(" ");
 
-		if(message.channel.type === "text") {
+		if(message.guild) {
 			console.log(timeNowString.cyan + command.yellow + " has been run by user " + message.author.tag.yellow + " in channel " + message.channel.name.yellow + " in server " + message.guild.name.yellow + ": " + stringArgs.brightMagenta);
 		} else {
 			console.log(timeNowString.cyan + command.yellow + " has been run by user " + message.author.tag.yellow + " privately: " + stringArgs.brightMagenta);
