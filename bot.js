@@ -51,7 +51,7 @@ client.on(`ready`, () => {
 
 });
 
-client.on(`message`, message => {
+client.on(`messageCreate`, message => {
 	
 	if(message.author.bot && message.author.id !== config.disboardUserID) return;
 	if(!message.guild) return message.channel.send(`${message.author}, you can only run bot commands in servers.`);
