@@ -53,10 +53,10 @@ client.on(`ready`, () => {
 
 client.on(`messageCreate`, message => {
 	
-	if(message.author.bot && message.author.id !== config.disboardUserID) return;
+	if(message.author.bot && message.author.id != config.disboardUserID) return;
 	if(!message.guild) return message.channel.send(`${message.author}, you can only run bot commands in servers.`);
 	if(message.guild.id !== config.guildID) return;
-	
+
 	// if (message.content.split(`\n`).length > 20) {
 	// 	message.delete({timeout: 10});
 	// 	message.channel.send(`${message.author}, please paste large amounts of text/code into https://sourceb.in/ to keep the channels clean.`);

@@ -18,13 +18,14 @@ function monthString() {
 
 module.exports.run = async(client, message, args, prefix) => {
 
-	if (!args[1] || !args[1] == `bump`) return;
+	if (!args[1] || args[1] != `bump`) return;
 
 	const filter = response => {
 		return (response.author.id == config.disboardUserID) && (response.embeds[0].description.includes(`:thumbsup:`));
 	}
 
-	message.channel.awaitMessages(filter, {
+	message.channel.awaitMessages({
+		filter,
 		max: 1,
 		time: 30000,
 		errors: [`time`]
@@ -54,7 +55,7 @@ module.exports.run = async(client, message, args, prefix) => {
 			message.channel.send(`<@&${config.bumpNotifRole}>, the server is ready to be bumped again!`);
 		}, 7201000) // 2hrs and 1sec
 	}).catch(err => {
-		// console.log(err);
+		console.log(err);
 	});
 
 }
